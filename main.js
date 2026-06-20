@@ -199,11 +199,20 @@ function setFormStatus(message, type = "info") {
   formStatus.className = `form-status ${type}`;
 }
 
-async function sendTelegramMessage({ name, email, subject, message }) {
+async function sendTelegramMessage({
+  name,
+  email,
+  phone,
+  telegram,
+  subject,
+  message,
+}) {
   const text =
     `📩 Yangi bog'lanish so'rovi:%0A%0A` +
     `Ism: ${encodeURIComponent(name)}%0A` +
     `Email: ${encodeURIComponent(email)}%0A` +
+    `Telefon: ${encodeURIComponent(phone)}%0A` +
+    `Telegram: ${encodeURIComponent(telegram)}%0A` +
     `Mavzu: ${encodeURIComponent(subject)}%0A%0A` +
     `Xabar:%0A${encodeURIComponent(message)}`;
 
@@ -220,10 +229,12 @@ if (contactForm) {
 
     const name = document.getElementById("contactName").value.trim();
     const email = document.getElementById("contactEmail").value.trim();
+    const phone = document.getElementById("contactPhone").value.trim();
+    const telegram = document.getElementById("contactTelegram").value.trim();
     const subject = document.getElementById("contactSubject").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
 
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !phone || !telegram || !subject || !message) {
       setFormStatus("Iltimos, barcha maydonlarni to‘ldiring.", "error");
       return;
     }
