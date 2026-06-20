@@ -247,6 +247,8 @@ if (contactForm) {
       const result = await sendTelegramMessage({
         name,
         email,
+        phone,
+        telegram,
         subject,
         message,
       });
