@@ -181,6 +181,22 @@ footer {
   right: 0;
   z-index: 50;
 }
+.developer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #eef2f6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.developer-badge i {
+  font-size: 0.92rem;
+}
 .icon-orb {
   width: 46px;
   height: 46px;
